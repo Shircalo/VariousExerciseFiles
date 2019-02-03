@@ -1,0 +1,84 @@
+C51 COMPILER V9.00   MAIN                                                                  08/03/2018 19:01:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: E:\keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg51.h"
+   2          #include "header.h"
+   3          
+   4          uint SPEED;               //当前速度
+   5          
+   6          /*******************************************************************************
+   7          * 函 数 名         : delay
+   8          * 函数功能                 : 延时函数，i=1时，大约延时10us
+   9          *******************************************************************************/
+  10          void delay(uint i)
+  11          {
+  12   1              while(i--);     
+  13   1      }
+  14          /*******************************************************************************
+  15          * 函 数 名         : main()
+  16          * 函数功能                 : 主函数
+  17          *******************************************************************************/
+  18          void main()
+  19          {
+  20   1              while(1)
+  21   1              {                                                       
+  22   2                      SPEED = 15000 / speedvalue;      //得到延时数值
+  23   2                      Receive();                                       //通过IIC得到速度设定值
+  24   2                      if(speedvalue != 0x00)           //判断是否启动电机
+  25   2                      {
+  26   3                              MOTOA = 1;
+  27   3                              MOTOB = 0;
+  28   3                              MOTOC = 1;
+  29   3                              MOTOD = 1;
+  30   3                              delay(SPEED);
+  31   3                              
+  32   3                              MOTOA = 1;
+  33   3                              MOTOB = 1;
+  34   3                              MOTOC = 1;
+  35   3                              MOTOD = 0;
+  36   3                              delay(SPEED);
+  37   3                              
+  38   3                              MOTOA = 0;
+  39   3                              MOTOB = 1;
+  40   3                              MOTOC = 1;
+  41   3                              MOTOD = 1;
+  42   3                              delay(SPEED);
+  43   3                              
+  44   3                              MOTOA = 1;
+  45   3                              MOTOB = 1;
+  46   3                              MOTOC = 0;
+  47   3                              MOTOD = 1;
+  48   3                      }                                               
+  49   2              }               
+  50   1      }
+  51          
+  52          
+  53          
+  54          
+  55          
+C51 COMPILER V9.00   MAIN                                                                  08/03/2018 19:01:09 PAGE 2   
+
+  56          
+  57          
+  58          
+  59          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     77    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

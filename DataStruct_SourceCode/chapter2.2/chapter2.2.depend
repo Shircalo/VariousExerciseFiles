@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1547689552 source:f:\desktop\datastruct_sourcecode\chapter2.2\sequencelist.c
+	"SequenceList.h"
+
+1542513272 f:\desktop\datastruct_sourcecode\chapter2.2\sequencelist.h
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+
+1547689536 f:\desktop\datastruct_sourcecode\chapter2.2\dataelement.h
+
+1547714820 source:f:\desktop\datastruct_sourcecode\chapter2.2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+	"SequenceList.h"
+	"LinkList.h"
+	"CircularLinkList.h"
+	"StaticLinkList.h"
+	"DoublyLinkList.h"
+	"SeqStack.h"
+
+1547689546 source:f:\desktop\datastruct_sourcecode\chapter2.2\linklist.c
+	"LinkList.h"
+
+1542526675 f:\desktop\datastruct_sourcecode\chapter2.2\linklist.h
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+
+1543123923 source:f:\desktop\datastruct_sourcecode\chapter2.2\circularlinklist.c
+	"CircularLinkList.h"
+
+1543119833 f:\desktop\datastruct_sourcecode\chapter2.2\circularlinklist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"DataElement.h"
+
+1544504064 source:f:\desktop\datastruct_sourcecode\chapter2.2\staticlinklist.c
+	"StaticLinkList.h"
+
+1544505399 f:\desktop\datastruct_sourcecode\chapter2.2\staticlinklist.h
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+
+1544794601 source:f:\desktop\datastruct_sourcecode\chapter2.2\doublylinklist.c
+	"DoublyLinkList.h"
+
+1544796530 f:\desktop\datastruct_sourcecode\chapter2.2\doublylinklist.h
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+
+1547692515 source:f:\desktop\datastruct_sourcecode\chapter2.2\seqstack.c
+	"SeqStack.h"
+
+1547692515 f:\desktop\datastruct_sourcecode\chapter2.2\seqstack.h
+	"DataElement.h"
+	<stdio.h>
+	<stdlib.h>
+
+1547708976 source:f:\desktop\datastruct_sourcecode\chapter2.2\linkstack.c
+	"LinkStack.h"
+
+1547708942 f:\desktop\datastruct_sourcecode\chapter2.2\linkstack.h
+	"stdio.h"
+	"stdlib.h"
+	"DataElement.h"
+
+1547790878 source:f:\desktop\datastruct_sourcecode\chapter2.2\seqqueue.c
+	"SeqQueue.h"
+
+1547790878 f:\desktop\datastruct_sourcecode\chapter2.2\seqqueue.h
+	<stdio.h>
+	<stdlib.h>
+	"DataElement.h"
+

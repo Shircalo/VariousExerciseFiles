@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="chapter2.2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="sequencelist\;linklist\;circularlinklist\;staticlinklist\;doublylinklist\;seqstack\;linkstack\;seqqueue\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/chapter2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/chapter2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CircularLinkList.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="circularlinklist/" />
+		</Unit>
+		<Unit filename="CircularLinkList.h">
+			<Option virtualFolder="circularlinklist/" />
+		</Unit>
+		<Unit filename="DataElement.h" />
+		<Unit filename="DoublyLinkList.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="doublylinklist/" />
+		</Unit>
+		<Unit filename="DoublyLinkList.h">
+			<Option virtualFolder="doublylinklist/" />
+		</Unit>
+		<Unit filename="LinkList.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="linklist/" />
+		</Unit>
+		<Unit filename="LinkList.h">
+			<Option virtualFolder="linklist/" />
+		</Unit>
+		<Unit filename="LinkStack.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="linkstack/" />
+		</Unit>
+		<Unit filename="LinkStack.h">
+			<Option virtualFolder="linkstack/" />
+		</Unit>
+		<Unit filename="SeqQueue.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="seqqueue/" />
+		</Unit>
+		<Unit filename="SeqQueue.h">
+			<Option virtualFolder="seqqueue/" />
+		</Unit>
+		<Unit filename="SeqStack.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="seqstack/" />
+		</Unit>
+		<Unit filename="SeqStack.h">
+			<Option virtualFolder="seqstack/" />
+		</Unit>
+		<Unit filename="SequenceList.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="sequencelist/" />
+		</Unit>
+		<Unit filename="SequenceList.h">
+			<Option virtualFolder="sequencelist/" />
+		</Unit>
+		<Unit filename="StaticLinkList.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="staticlinklist/" />
+		</Unit>
+		<Unit filename="StaticLinkList.h">
+			<Option virtualFolder="staticlinklist/" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,124 @@
+C51 COMPILER V9.00   KEYIN                                                                 08/04/2018 16:19:03 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE KEYIN
+OBJECT MODULE PLACED IN keyin.OBJ
+COMPILER INVOKED BY: E:\keil\C51\BIN\C51.EXE keyin.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include"header.h"      
+   2          
+   3          uint thresholdvalue;          //温度阈值
+   4          uchar speedvalue;                     //速度设定值
+   5          uchar DisplayData2[8];        //温度阈值段码
+   6          uchar DisplayData3[8];        //速度设定值段码
+   7          uint KeyValue = 0;                        //一个按键值
+   8          uchar d;                                          //用于判断按键是否按下，如果按键按下则修改当前显示数值
+   9          
+  10                                                                    
+  11          /*******************************************************************************
+  12          * 函 数 名         : KeyDown()
+  13          * 函数功能                 : 检测有按键按下并读取键值
+  14          * 输    入         : 无
+  15          * 输    出         : 无
+  16          *******************************************************************************/
+  17          void KeyDown(void)
+  18          {
+  19   1              char a=0;
+  20   1              GPIO_KEY=0x0f;
+  21   1              if(GPIO_KEY!=0x0f)     //读取按键是否按下
+  22   1              {
+  23   2                      delay(1000);       //延时10ms进行消抖
+  24   2                      if(GPIO_KEY!=0x0f) //再次检测键盘是否按下
+  25   2                      {       
+  26   3                              //测试列
+  27   3                              GPIO_KEY=0X0F;
+  28   3                              switch(GPIO_KEY)
+  29   3                              {
+  30   4                                      case(0X07):     KeyValue=0;break;
+  31   4                                      case(0X0b):     KeyValue=1;break;
+  32   4                                      case(0X0d): KeyValue=2;break;
+  33   4                                      case(0X0e):     KeyValue=3;break;
+  34   4                              }
+  35   3      
+  36   3                      GPIO_KEY=0XF0;
+  37   3                              switch(GPIO_KEY)
+  38   3                              {
+  39   4                                      case(0X70):     KeyValue=KeyValue;break;
+  40   4                                      case(0Xb0):     KeyValue=KeyValue+4;break;
+  41   4                                      case(0Xd0): KeyValue=KeyValue+8;break;
+  42   4                                      case(0Xe0):     KeyValue=KeyValue+12;break;
+  43   4                              }
+  44   3                              while((a<50)&&(GPIO_KEY!=0xf0))  //检测按键松手检测
+  45   3                              {
+  46   4                                      delay(1000);
+  47   4                                      a++;
+  48   4                              }
+  49   3                              d=1;    //用于判断按键是否按下，如果按键按下则修改当前显示数值
+  50   3                      }
+  51   2              }
+  52   1      }
+  53          /*******************************************************************************
+  54          * 函 数 名         : DisplayValue()
+  55          * 函数功能                 : 确定输入的温度阈值或速度设定值
+C51 COMPILER V9.00   KEYIN                                                                 08/04/2018 16:19:03 PAGE 2   
+
+  56          * 输    入         : 无
+  57          * 输    出         : 无
+  58          *******************************************************************************/
+  59          void DisplayValue()
+  60          {
+  61   1              switch(DisplayChoice)     //通过DisplayChoice的值选择要显示的值
+  62   1              {
+  63   2                      case 2:                           
+  64   2                              if(d == 1)                //判断按键是否按下
+  65   2                              {
+  66   3                                      thresholdvalue = KeyValue + thresholdvalue*10;  //通过单个矩阵按键值确定温度阈值                                
+  67   3                              }                       
+  68   2                              if((thresholdvalue != 0) || (d == 1))                           //如果有数值输入，则修改当前显示值
+  69   2                              {
+  70   3                                      d = 0;
+  71   3                                      DisplayData2[1] = smgduan[thresholdvalue / 10];    //温度用两位数显示
+  72   3                                      DisplayData2[2] = smgduan[thresholdvalue % 10];
+  73   3                              }
+  74   2                              break;
+  75   2                      case 3:
+  76   2                              if(d == 1)
+  77   2                              {
+  78   3                                      speedvalue = KeyValue + speedvalue*10;                          
+  79   3                              }                       
+  80   2                              if((speedvalue != 0) || (d == 1))
+  81   2                              {
+  82   3                                      d = 0;  
+  83   3                                      DisplayData3[3] = smgduan[speedvalue % 1000 / 100];      //速度设定值用三位数显示
+  84   3                                      DisplayData3[4] = smgduan[speedvalue % 100 / 10];
+  85   3                                      DisplayData3[5] = smgduan[speedvalue % 10];
+  86   3                              }
+  87   2                              break;  
+  88   2              }       
+  89   1      }
+  90          
+  91                  
+  92          
+  93          
+  94          
+  95          
+  96          
+  97          
+  98          
+  99          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    368    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     22       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
