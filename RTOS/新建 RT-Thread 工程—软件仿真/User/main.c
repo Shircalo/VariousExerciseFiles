@@ -19,6 +19,8 @@
 rt_uint8_t flag1;
 rt_uint8_t flag2;
 
+extern rt_list_t rt_thread_priority_table[RT_THREAD_PRIORITY_MAX];
+
 /*
 ***************************************************************************************
 *                             线程控制块 & STACK & 线程声明
@@ -39,15 +41,23 @@ rt_uint8_t rt_flag2_thread_stack[512];
 void flag1_thread_entry(void *p_arg);
 void flag2_thread_entry(void *p_arg);
 
-/*
-***************************************************************************************
-*                                  main 函数
-***************************************************************************************
-*/
+/**************************************************************************************
+	*	@brief	main函数
+	*	@brief	无
+	*	@param	无
+	*	@retval 无
+	*
+	*	@attention
+	*************************************************************************************
+	*/
+	
 int main(void)
 {
 	/* 硬件初始化 */
 	/* 将硬件相关的初始化放在这里，如果是软件仿真则没有相关的初始化代码 */
+	
+	/* 调度器初始化 */
+	rt_system_scheduler_init();
 	
 	
 	/* 初始化线程 */
@@ -56,6 +66,8 @@ int main(void)
 	                RT_NULL,                         /* 线程形参 */
 	                &rt_flag1_thread_stack[0],      /* 线程栈起始地址 */
 	                sizeof(rt_flag1_thread_stack) ); /* 线程栈的大小，单位为字节 */
+	/* 将线程插入到就绪列表 */
+	rt_list_insert_before( &(rt_thread_priority_table[0]), &(rt_flag1_thread.tlist) );
 	
 	/* 初始化线程 */
 	rt_thread_init( &rt_flag2_thread,                /* 线程控制块 */
@@ -63,7 +75,9 @@ int main(void)
 	                RT_NULL,                         /* 线程形参 */
 	                &rt_flag2_thread_stack[0],        /* 线程栈起始地址 */
 	                sizeof(rt_flag2_thread_stack) ); /* 线程栈的大小，单位为字节 */
-	
+	/* 将线程插入到就绪列表 */
+	rt_list_insert_before( &(rt_thread_priority_table[1]), &(rt_flag2_thread.tlist) );
+
 }
 
 /*
