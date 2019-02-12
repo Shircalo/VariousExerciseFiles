@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\rtthread\3.0.3\bsp;..\rtthread\3.0.3\components\finish;..\rtthread\3.0.3\include;..\rtthread\3.0.3\include\libc</IncludePath>
+              <IncludePath>..\User;..\rtthread\3.0.3\include;..\rtthread\3.0.3\include\libc;..\rtthread\3.0.3\bsp;..\rtthread\3.0.3\components</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -437,6 +437,11 @@
               <FileType>1</FileType>
               <FilePath>..\rtthread\3.0.3\libcpu\arm\cortex-m4\cpuport.c</FilePath>
             </File>
+            <File>
+              <FileName>context_rvds.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\rtthread\3.0.3\libcpu\arm\cortex-m4\context_rvds.s</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -461,6 +466,11 @@
               <FileName>rtservice.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\rtthread\3.0.3\include\rtservice.h</FilePath>
+            </File>
+            <File>
+              <FileName>scheduler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\rtthread\3.0.3\src\scheduler.c</FilePath>
             </File>
           </Files>
         </Group>

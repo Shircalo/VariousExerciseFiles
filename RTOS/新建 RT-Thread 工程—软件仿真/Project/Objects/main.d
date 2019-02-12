@@ -1,0 +1,12 @@
+.\objects\main.o: ..\User\main.c
+.\objects\main.o: ..\rtthread\3.0.3\include\rtthread.h
+.\objects\main.o: ..\rtthread\3.0.3\include\rtdef.h
+.\objects\main.o: ..\User\rtconfig.h
+.\objects\main.o: ..\rtthread\3.0.3\include\rtservice.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\ARMCM4.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm4.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmSimd.h
+.\objects\main.o: D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h

@@ -1,0 +1,12 @@
+--cpu Cortex-M4
+".\objects\main.o"
+".\objects\cpuport.o"
+".\objects\context_rvds.o"
+".\objects\thread.o"
+".\objects\scheduler.o"
+".\objects\startup_armcm4.o"
+".\objects\system_armcm4.o"
+--strict --scatter ".\Objects\Fire_RT-Thread.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Fire_RT-Thread.map" -o .\Objects\Fire_RT-Thread.axf

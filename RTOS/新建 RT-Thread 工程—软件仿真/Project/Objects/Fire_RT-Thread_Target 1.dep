@@ -1,0 +1,46 @@
+Dependencies for Project 'Fire_RT-Thread', Target 'Target 1': (DO NOT MODIFY !)
+F (..\User\main.c)(0x5C6237A5)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I..\User -I..\rtthread\3.0.3\include -I..\rtthread\3.0.3\include\libc -I..\rtthread\3.0.3\bsp -I..\rtthread\3.0.3\components-I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="515" -D_RTE_ -DARMCM4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5C6238CF)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5C62343B)
+I (..\User\rtconfig.h)(0x5C623071)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5C623228)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\ARMCM4.h)(0x540FF94C)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm4.h)(0x55093C04)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmSimd.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x50B2CC4C)
+F (..\User\rtconfig.h)(0x5C623071)()
+F (..\rtthread\3.0.3\include\rthw.h)(0x5C623E8C)()
+F (..\rtthread\3.0.3\libcpu\arm\cortex-m4\cpuport.c)(0x5C623AAD)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I..\User -I..\rtthread\3.0.3\include -I..\rtthread\3.0.3\include\libc -I..\rtthread\3.0.3\bsp -I..\rtthread\3.0.3\components-I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="515" -D_RTE_ -DARMCM4-o .\objects\cpuport.o --omf_browse .\objects\cpuport.crf --depend .\objects\cpuport.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5C6238CF)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5C62343B)
+I (..\User\rtconfig.h)(0x5C623071)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5C623228)
+F (..\rtthread\3.0.3\libcpu\arm\cortex-m4\context_rvds.s)(0x5C623E57)(--cpu Cortex-M4 --li -g --apcs=interwork -I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 515" --pd "_RTE_ SETA 1" --pd "ARMCM4 SETA 1"--list .\listings\context_rvds.lst --xref -o .\objects\context_rvds.o --depend .\objects\context_rvds.d)
+F (..\rtthread\3.0.3\include\rtdef.h)(0x5C62343B)()
+F (..\rtthread\3.0.3\src\thread.c)(0x5C62394D)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I..\User -I..\rtthread\3.0.3\include -I..\rtthread\3.0.3\include\libc -I..\rtthread\3.0.3\bsp -I..\rtthread\3.0.3\components-I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="515" -D_RTE_ -DARMCM4-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5C6238CF)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5C62343B)
+I (..\User\rtconfig.h)(0x5C623071)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5C623228)
+I (..\rtthread\3.0.3\include\rthw.h)(0x5C623E8C)
+F (..\rtthread\3.0.3\include\rtthread.h)(0x5C6238CF)()
+F (..\rtthread\3.0.3\include\rtservice.h)(0x5C623228)()
+F (..\rtthread\3.0.3\src\scheduler.c)(0x5C623FEE)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I..\User -I..\rtthread\3.0.3\include -I..\rtthread\3.0.3\include\libc -I..\rtthread\3.0.3\bsp -I..\rtthread\3.0.3\components-I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="515" -D_RTE_ -DARMCM4-o .\objects\scheduler.o --omf_browse .\objects\scheduler.crf --depend .\objects\scheduler.d)
+I (..\rtthread\3.0.3\include\rtthread.h)(0x5C6238CF)
+I (..\rtthread\3.0.3\include\rtdef.h)(0x5C62343B)
+I (..\User\rtconfig.h)(0x5C623071)
+I (..\rtthread\3.0.3\include\rtservice.h)(0x5C623228)
+I (..\rtthread\3.0.3\include\rthw.h)(0x5C623E8C)
+F (..\Doc\readme.txt)(0x5C510B18)()
+F (RTE\Device\ARMCM4\startup_ARMCM4.s)(0x50B2CC4C)(--cpu Cortex-M4 --li -g --apcs=interwork -I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include--pd "__UVISION_VERSION SETA 515" --pd "_RTE_ SETA 1" --pd "ARMCM4 SETA 1"--list .\listings\startup_armcm4.lst --xref -o .\objects\startup_armcm4.o --depend .\objects\startup_armcm4.d)
+F (RTE\Device\ARMCM4\system_ARMCM4.c)(0x53FEF2AA)(-c --cpu Cortex-M4 --li -g -O0 --apcs=interwork --split_sections -I..\User -I..\rtthread\3.0.3\include -I..\rtthread\3.0.3\include\libc -I..\rtthread\3.0.3\bsp -I..\rtthread\3.0.3\components-I "F:\Desktop\other\GitHub\VariousExerciseFiles\RTOS\新建 RT-Thread 工程—软件仿真\Project\RTE"-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include-D__UVISION_VERSION="515" -D_RTE_ -DARMCM4-o .\objects\system_armcm4.o --omf_browse .\objects\system_armcm4.crf --depend .\objects\system_armcm4.d)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\ARMCM4.h)(0x540FF94C)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cm4.h)(0x55093C04)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x54C245B8)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmInstr.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmFunc.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include\core_cmSimd.h)(0x55093C04)
+I (D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM4\Include\system_ARMCM4.h)(0x50B2CC4C)

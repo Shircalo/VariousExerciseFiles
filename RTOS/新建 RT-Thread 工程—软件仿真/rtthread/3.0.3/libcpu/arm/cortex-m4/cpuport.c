@@ -23,7 +23,7 @@ struct stack_frame
 		/* r4~r11 register
 		异常发生时需手动保存的寄存器 */
 		rt_uint32_t r4;
-	  rt_uint32_t r5;
+	    rt_uint32_t r5;
 		rt_uint32_t r6;
 		rt_uint32_t r7;
 		rt_uint32_t r8;
@@ -55,9 +55,9 @@ rt_uint32_t rt_thread_switch_interrupt_flag;
 ******************************************************************************************************
 */
 /* 线程栈的初始化 */
-rt_uint8_t *rt_hw_stack_init(void				*tentry,
-	                           void       *parameter,
-														 rt_uint8_t *stack_addr)
+rt_uint8_t *rt_hw_stack_init(void		*tentry,
+	                         void       *parameter,
+							 rt_uint8_t *stack_addr)
 {
 	
 	
@@ -86,13 +86,13 @@ rt_uint8_t *rt_hw_stack_init(void				*tentry,
 	}
 	
 	/* 初始化异常发生时自动保存的寄存器 */
-	stack_frame->exception_stack_frame.r0 = (unsigned long)parameter;  /* r0:argment */
-	stack_frame->exception_stack_frame.r1 = 0;                         /* r1 */
-	stack_frame->exception_stack_frame.r2 = 0;                         /* r2 */
-	stack_frame->exception_stack_frame.r3 = 0;                         /* r3 */
+	stack_frame->exception_stack_frame.r0  = (unsigned long)parameter;  /* r0:argment */
+	stack_frame->exception_stack_frame.r1  = 0;                         /* r1 */
+	stack_frame->exception_stack_frame.r2  = 0;                         /* r2 */
+	stack_frame->exception_stack_frame.r3  = 0;                         /* r3 */
 	stack_frame->exception_stack_frame.r12 = 0;                        /* r12 */
-	stack_frame->exception_stack_frame.lr = 0;                         /* lr */
-	stack_frame->exception_stack_frame.pc = (unsigned long)tentry;     /* entry point,pc */
+	stack_frame->exception_stack_frame.lr  = 0;                         /* lr */
+	stack_frame->exception_stack_frame.pc  = (unsigned long)tentry;     /* entry point,pc */
 	stack_frame->exception_stack_frame.psr = 0x01000000L;              /* PSR */
 	
 	/* 返回线程栈指针 */

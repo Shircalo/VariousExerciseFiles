@@ -32,8 +32,8 @@ typedef rt_base_t                                        rt_off_t;            /*
 #define RT_FALSE                      0                /**< boolean fails */
 
 #ifdef __CC_ARM
-        #define rt_inline                   static inline 
-				#define ALIGN(n)                    __attribute__((align(n)))
+        #define rt_inline                   static __inline 
+				#define ALIGN(n)                    __attribute__((aligned(n)))
 
 #elif defined (__IAR_SYSTEMS_ICC__)
 		 #define rt_inline                 static inline
@@ -101,9 +101,8 @@ struct rt_thread
 	
 	rt_list_t   tlist;           /* 线程链表节点 */
 };	
-typedef struct rt_thread *rt_thread_t;	
-	
-	
+typedef struct rt_thread *rt_thread_t;		
 	
 	
 #endif /* __RT_DEF_H__ */
+
