@@ -23,6 +23,7 @@
 */
 
 #include <rtthread.h>
+#include <rthw.h>
 #include "ARMCM4.h"
 
 
@@ -78,24 +79,34 @@ int main(void)
 	/* 硬件初始化 */
 	/* 将硬件相关的初始化放在这里，如果是软件仿真则没有相关的初始化代码 */
 	
+	/* 关中断 */
+	rt_hw_interrupt_disable();
+	
+	/* SystemTick中断频率设置 */
+	SysTick_Config( SystemCoreClock / RT_TICK_PER_SECOND );
+	
 	/* 调度器初始化 */
 	rt_system_scheduler_init();
 	
+	/* 初始化空闲线程 */
+	rt_thread_idle_init();
 	
 	/* 初始化线程 */
 	rt_thread_init( &rt_flag1_thread,                /* 线程控制块 */
+	                "rt_flag1_thread",               /* 线程的名字，字符串形式 */
 	                flag1_thread_entry,              /* 线程入口地址 */
 	                RT_NULL,                         /* 线程形参 */
-	                &rt_flag1_thread_stack[0],      /* 线程栈起始地址 */
+	                &rt_flag1_thread_stack[0],       /* 线程栈起始地址 */
 	                sizeof(rt_flag1_thread_stack) ); /* 线程栈的大小，单位为字节 */
 	/* 将线程插入到就绪列表 */
 	rt_list_insert_before( &(rt_thread_priority_table[0]), &(rt_flag1_thread.tlist) );
 	
 	/* 初始化线程 */
 	rt_thread_init( &rt_flag2_thread,                /* 线程控制块 */
+	                "rt_flag2_thread",               /* 线程的名字，字符串形式 */
 	                flag2_thread_entry,              /* 线程入口地址 */
 	                RT_NULL,                         /* 线程形参 */
-	                &rt_flag2_thread_stack[0],        /* 线程栈起始地址 */
+	                &rt_flag2_thread_stack[0],       /* 线程栈起始地址 */
 	                sizeof(rt_flag2_thread_stack) ); /* 线程栈的大小，单位为字节 */
 	/* 将线程插入到就绪列表 */
 	rt_list_insert_before( &(rt_thread_priority_table[1]), &(rt_flag2_thread.tlist) );
@@ -120,6 +131,7 @@ void flag1_thread_entry( void *p_arg )
 {
 	for( ;; )
 	{
+#if 0
 		flag1 = 1;
 		delay( 100 );
 		flag1 = 0;
@@ -127,13 +139,20 @@ void flag1_thread_entry( void *p_arg )
         
 		/* 线程切换，这里是手动切换 */
 		rt_schedule();
+#else
+		flag1 = 1;
+		rt_thread_delay(2);
+		flag1 = 0;
+		rt_thread_delay(2);
+#endif
 	}
 }
-/* 线程1 */
+/* 线程2 */
 void flag2_thread_entry( void *p_arg )
 {
 	for( ;; )
 	{
+#if 0
 		flag2 = 1;
 		delay( 100 );
 		flag2 = 0;
@@ -141,5 +160,42 @@ void flag2_thread_entry( void *p_arg )
 
 		/* 线程切换，这里是手动切换 */
 		rt_schedule();
+#else
+		flag2 = 1;
+		rt_thread_delay(2);
+		flag2 = 0;
+		rt_thread_delay(2);
+#endif
 	} 
 }
+
+
+void SysTick_Handler(void)
+{
+	/* 进入中断 */
+	rt_interrupt_enter();
+	
+	rt_tick_increase();
+	
+	/* 离开中断 */
+	rt_interrupt_leave();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
